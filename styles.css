@@ -1,84 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg-dark: #0f0d11;
+  --bg-card: #18151c;
+  --bg-card-border: #2a2431;
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #f1c40f;
+  --accent-red: #8b0000;
+  --accent-red-hover: #a50000;
+  --text-main: #e2dede;
+  --text-muted: #8c8594;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #121212;
-  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Header & Active Nav Styling */
+header {
+  background-color: #141118;
+  border-bottom: 1px solid var(--bg-card-border);
+  padding: 0 24px;
 }
 
 nav {
-  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 nav a {
-  margin-right: 15px;
-  color: #e5a93b;
+  color: var(--text-muted);
   text-decoration: none;
-  font-weight: bold;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
 }
 
-.controls {
+nav a:hover {
+  color: var(--text-main);
+}
+
+/* Active Menu Tab State */
+nav a.active {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* Container & Typography */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--bg-card-border);
+  padding-bottom: 8px;
+  margin-top: 36px;
   margin-bottom: 20px;
 }
 
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Control Buttons */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
 button {
-  padding: 10px 16px;
-  margin-right: 10px;
-  font-size: 15px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-radius: 6px;
   cursor: pointer;
-  background-color: #2b2b2b;
-  color: #fff;
-  border: 1px solid #555;
-  border-radius: 4px;
+  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent;
 }
 
-button:hover {
-  background-color: #3d3d3d;
+button:active {
+  transform: scale(0.98);
 }
 
+.btn-primary {
+  background: linear-gradient(180deg, #d4af37 0%, #aa820a 100%);
+  color: #000;
+  border-color: #f1c40f;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ebd06a 0%, #c49915 100%);
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, #3a3243 0%, #231e2a 100%);
+  color: var(--text-main);
+  border-color: #4a4156;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #4a4156 0%, #2d2736 100%);
+}
+
+/* Card Grid & Slots */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 30px;
+  gap: 20px;
+  min-height: 380px;
 }
 
-/* Enforce physical card proportions for high-res PNG displays */
 .card {
-  width: 260px;
-  background-color: #1e1e1e;
-  border: 2px solid #333;
-  border-radius: 10px;
+  width: 250px;
+  height: 375px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 12px;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .card.placeholder {
-  height: 360px;
-  border: 2px dashed #555;
+  border: 2px dashed #3a3243;
+  background-color: rgba(24, 21, 28, 0.4);
   justify-content: center;
-  color: #777;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 20px;
 }
 
 .btn-use {
-  background-color: #8b0000;
+  background-color: var(--accent-red);
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px;
-  margin-top: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  margin-top: 8px;
   width: 100%;
+  border: 1px solid #a50000;
 }
 
 .btn-use:hover {
-  background-color: #b22222;
+  background-color: var(--accent-red-hover);
 }
