@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* Header & Active Nav Styling */
 header {
   background-color: #141118;
   border-bottom: 1px solid var(--bg-card-border);
@@ -51,14 +50,12 @@ nav a:hover {
   color: var(--text-main);
 }
 
-/* Active Menu Tab State */
 nav a.active {
   color: var(--accent-gold);
   border-bottom-color: var(--accent-gold);
   background: rgba(212, 175, 55, 0.05);
 }
 
-/* Container & Typography */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -72,7 +69,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--accent-gold);
   margin-bottom: 8px;
 }
@@ -89,27 +86,55 @@ h2 {
 .subtitle {
   color: var(--text-muted);
   margin-bottom: 24px;
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-/* Control Buttons */
+/* Social Bar */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.social-btn {
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.social-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* UI Buttons */
 .controls {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
 }
 
-button {
+button, .btn-link {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.1s ease, background-color 0.2s ease;
   border: 1px solid transparent;
 }
 
-button:active {
+button:active, .btn-link:active {
   transform: scale(0.98);
 }
 
@@ -117,11 +142,6 @@ button:active {
   background: linear-gradient(180deg, #d4af37 0%, #aa820a 100%);
   color: #000;
   border-color: #f1c40f;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(180deg, #ebd06a 0%, #c49915 100%);
 }
 
 .btn-secondary {
@@ -130,11 +150,22 @@ button:active {
   border-color: #4a4156;
 }
 
-.btn-secondary:hover {
-  background: linear-gradient(180deg, #4a4156 0%, #2d2736 100%);
+/* Rules Formatting */
+.rule-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-/* Card Grid & Slots */
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* Cards Container */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -154,7 +185,6 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
@@ -172,7 +202,6 @@ button:active {
   color: var(--text-muted);
   font-family: 'Cinzel', serif;
   font-size: 0.85rem;
-  letter-spacing: 0.05em;
   padding: 20px;
 }
 
@@ -185,9 +214,40 @@ button:active {
   padding: 8px 12px;
   margin-top: 8px;
   width: 100%;
-  border: 1px solid #a50000;
+  border: none;
+  border-radius: 4px;
 }
 
-.btn-use:hover {
-  background-color: var(--accent-red-hover);
+/* Dice Roller Canvas Section */
+.dice-container {
+  background: var(--bg-card);
+  border: 1px dashed var(--accent-gold);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dice-result {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--accent-gold);
+  margin: 12px 0;
+}
+
+/* Shop Grid Placeholder */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.shop-item {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
