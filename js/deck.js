@@ -10,7 +10,7 @@ const DECK_FOLDERS = {
 const itemPlaceholderHTML = `
   <div id="item-placeholder" class="card placeholder-item" style="display: flex; gap: 16px; align-items: center; width: 100%; max-width: 580px; height: auto; padding: 12px; background-color: var(--bg-card); border: 1px dashed var(--bg-card-border); border-radius: 12px;">
     <div class="card" style="width: 140px; height: 210px; flex-shrink: 0; padding: 0;">
-      <img src="assets/cards/deck-item/0-item-card-back.png" alt="Item Deck Back" style="border-radius: 10px;">
+      <img src="assets/cards/deck-item/item-cardback.png" alt="Item Deck Back" style="border-radius: 10px;">
     </div>
     <div>
       <h3 style="color: var(--accent-gold); margin-bottom: 6px; font-size: 1.1rem;">NO CURSED ITEMS HELD</h3>
