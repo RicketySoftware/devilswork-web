@@ -1,6 +1,13 @@
 let deckData = null;
 
-// Updated path reflecting new /data/ folder location
+// HTML structure for the inventory empty state placeholder
+const itemPlaceholderHTML = `
+  <div id="item-placeholder" class="card placeholder" style="width: 100%; max-width: 520px; height: auto; min-height: 140px;">
+    <p><strong>NO CURSED ITEMS HELD</strong></p>
+    <p style="margin-top: 8px;">In each "room" there are a number of interactions of interest presented to the players, each one either rewards the players with items or progresses the story[cite: 1]. You will meet other weirdos during the story, helping them may result in earning a cursed item card[cite: 1].</p>
+  </div>
+`;
+
 fetch('data/cards.json')
   .then(response => response.json())
   .then(data => {
@@ -26,7 +33,14 @@ function createCardElement(cardData, showUseButton = false) {
     const useBtn = document.createElement('button');
     useBtn.className = 'btn-use';
     useBtn.innerText = 'Use Item';
-    useBtn.onclick = () => cardEl.remove();
+    useBtn.onclick = () => {
+      cardEl.remove();
+      // If no cards remain in inventory, show the placeholder again
+      const itemContainer = document.getElementById('item-container');
+      if (itemContainer.children.length === 0) {
+        itemContainer.innerHTML = itemPlaceholderHTML;
+      }
+    };
     cardEl.appendChild(useBtn);
   }
 
@@ -53,7 +67,13 @@ document.getElementById('btn-item').addEventListener('click', () => {
   if (!deckData) return;
 
   const itemContainer = document.getElementById('item-container');
-  const itemCard = getRandomCard(deckData.item);
+  
+  // Remove empty state placeholder if present before adding item
+  const placeholder = document.getElementById('item-placeholder');
+  if (placeholder) {
+    placeholder.remove();
+  }
 
+  const itemCard = getRandomCard(deckData.item);
   itemContainer.appendChild(createCardElement(itemCard, true));
 });
