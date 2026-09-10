@@ -1,8 +1,6 @@
-// Placeholder d12 logic - ready for 3D canvas animation integration
 document.getElementById('btn-roll-d12').addEventListener('click', () => {
-  const display = document.getElementById('dice-display');
+  const display = document.getElementById('die-display');
   
-  // Quick rolling visual effect
   let rolls = 0;
   const interval = setInterval(() => {
     display.innerText = Math.floor(Math.random() * 12) + 1;
@@ -13,9 +11,9 @@ document.getElementById('btn-roll-d12').addEventListener('click', () => {
       display.innerText = finalRoll;
       
       if (finalRoll === 12) {
-        display.style.color = '#f1c40f'; // Critical Success Gold
+        display.style.color = '#f1c40f'; // Natural 12
       } else if (finalRoll === 1) {
-        display.style.color = '#a50000'; // Calamity Red
+        display.style.color = '#a50000'; // Calamity Natural 1
       } else {
         display.style.color = '#d4af37';
       }
