@@ -2,39 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Devil's Work - Card Deck</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Devil's Work - Card Deck & Dice</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav>
       <a href="index.html">Home</a>
-      <a href="deck.html" class="active">Card Deck</a>
+      <a href="how-to-play.html">How to Play</a>
+      <a href="deck.html" class="active">Card Deck & Dice</a>
+      <a href="shop.html">Shop</a>
     </nav>
   </header>
 
   <main class="container">
-    <h1>Card Deck Generator</h1>
-    <p class="subtitle">LOREM_IPSUM_DECK_SUBTITLE_TEXT</p>
-    
+    <h1>Interactive Deck & Dice</h1>
+    <p class="subtitle">Draw character cards, manage cursed items, and roll your d12 checks.</p>
+
+    <!-- Dice Roller Container -->
+    <div class="dice-container">
+      <h2>d12 Roller Widget</h2>
+      <div class="dice-result" id="dice-display">--</div>
+      <button id="btn-roll-d12" class="btn-primary">Roll d12</button>
+      <!-- TODO: Canvas element for future 3D dice physics animation -->
+      <!-- <canvas id="dice-canvas"></canvas> -->
+    </div>
+
     <div class="controls">
-      <button id="btn-character" class="btn-primary">Create Character</button>
-      <button id="btn-item" class="btn-secondary">Get Magic Item</button>
+      <button id="btn-character" class="btn-primary">Create Character (Draw 3)</button>
+      <button id="btn-item" class="btn-secondary">Get Magic Item (Draw 1)</button>
     </div>
 
     <h2>Character (Heart / Kin / Class)</h2>
     <div class="card-grid">
-      <div id="slot-heart"><div class="card placeholder"><p>LOREM_HEART_SLOT</p></div></div>
-      <div id="slot-kin"><div class="card placeholder"><p>LOREM_KIN_SLOT</p></div></div>
-      <div id="slot-class"><div class="card placeholder"><p>LOREM_CLASS_SLOT</p></div></div>
+      <div id="slot-heart"><div class="card placeholder"><p>HEART SLOT</p></div></div>
+      <div id="slot-kin"><div class="card placeholder"><p>KIN SLOT</p></div></div>
+      <div id="slot-class"><div class="card placeholder"><p>CLASS SLOT</p></div></div>
     </div>
 
-    <h2>Items</h2>
+    <h2>Inventory & Cursed Items</h2>
     <div class="card-grid" id="item-container">
-      <!-- Item cards stack here -->
+      <!-- Item cards stack dynamically -->
     </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="js/deck.js"></script>
+  <script src="js/dice.js"></script>
 </body>
 </html>
