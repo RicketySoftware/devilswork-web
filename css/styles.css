@@ -90,51 +90,24 @@ h2 {
   line-height: 1.5;
 }
 
-/* Social Bar */
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 24px 0;
-}
-
-.social-btn {
-  padding: 8px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
-  color: var(--text-main);
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.social-btn:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-}
-
-/* UI Buttons */
 .controls {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
 }
 
-button, .btn-link {
+button {
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
   transition: transform 0.1s ease, background-color 0.2s ease;
   border: 1px solid transparent;
 }
 
-button:active, .btn-link:active {
+button:active {
   transform: scale(0.98);
 }
 
@@ -150,22 +123,6 @@ button:active, .btn-link:active {
   border-color: #4a4156;
 }
 
-/* Rules Formatting */
-.rule-box {
-  background-color: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.rule-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
-
-/* Cards Container */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -194,17 +151,6 @@ button:active, .btn-link:active {
   border-radius: 8px;
 }
 
-.card.placeholder {
-  border: 2px dashed #3a3243;
-  background-color: rgba(24, 21, 28, 0.4);
-  justify-content: center;
-  text-align: center;
-  color: var(--text-muted);
-  font-family: 'Cinzel', serif;
-  font-size: 0.85rem;
-  padding: 20px;
-}
-
 .btn-use {
   background-color: var(--accent-red);
   color: #fff;
@@ -218,36 +164,23 @@ button:active, .btn-link:active {
   border-radius: 4px;
 }
 
-/* Dice Roller Canvas Section */
-.dice-container {
+.btn-use:hover {
+  background-color: var(--accent-red-hover);
+}
+
+.die-container {
   background: var(--bg-card);
-  border: 1px dashed var(--accent-gold);
+  border: 1px dashed var(--bg-card-border);
   border-radius: 8px;
   padding: 24px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.dice-result {
+.die-result {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
   color: var(--accent-gold);
   margin: 12px 0;
-}
-
-/* Shop Grid Placeholder */
-.shop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.shop-item {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-card-border);
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
