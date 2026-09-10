@@ -6,17 +6,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="deck.html">Card Deck</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="deck.html" class="active">Card Deck</a>
+    </nav>
+  </header>
 
-  <main>
+  <main class="container">
     <h1>Card Deck Generator</h1>
+    <p class="subtitle">LOREM_IPSUM_DECK_SUBTITLE_TEXT</p>
     
     <div class="controls">
-      <button id="btn-character">Create Character</button>
-      <button id="btn-item">Get Magic Item</button>
+      <button id="btn-character" class="btn-primary">Create Character</button>
+      <button id="btn-item" class="btn-secondary">Get Magic Item</button>
     </div>
 
     <h2>Character (Heart / Kin / Class)</h2>
@@ -28,7 +31,7 @@
 
     <h2>Items</h2>
     <div class="card-grid" id="item-container">
-      <!-- Dynamic Item Cards Stack Here -->
+      <!-- Item cards stack here -->
     </div>
   </main>
 
