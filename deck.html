@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Devil's Work - Card Deck</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="deck.html">Card Deck</a>
+  </nav>
+
+  <main>
+    <h1>Card Deck Generator</h1>
+    
+    <div class="controls">
+      <button id="btn-character">Create Character</button>
+      <button id="btn-item">Get Magic Item</button>
+    </div>
+
+    <h2>Character (Heart / Kin / Class)</h2>
+    <div class="card-grid">
+      <div id="slot-heart"><div class="card placeholder"><p>LOREM_HEART_SLOT</p></div></div>
+      <div id="slot-kin"><div class="card placeholder"><p>LOREM_KIN_SLOT</p></div></div>
+      <div id="slot-class"><div class="card placeholder"><p>LOREM_CLASS_SLOT</p></div></div>
+    </div>
+
+    <h2>Items</h2>
+    <div class="card-grid" id="item-container">
+      <!-- Dynamic Item Cards Stack Here -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
