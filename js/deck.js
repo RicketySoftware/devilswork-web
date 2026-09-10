@@ -38,23 +38,25 @@ function getRandomFilename(filenameArray) {
 function updateCharacterSlot(slotId, imagePath) {
   const slot = document.getElementById(slotId);
   const card = slot.querySelector('.card');
-  const frontImg = card.querySelector('.card-front img');
+  const cardFront = card.querySelector('.card-front');
 
   if (card.classList.contains('flipped')) {
-    // Unflip to show cardback first
+    // Step 1: Unflip card to show back
     card.classList.remove('flipped');
     
-    // Swap image at flip midpoint (300ms), then flip face-up
+    // Step 2: Swap image at flip midpoint (300ms), then flip face-up
     setTimeout(() => {
-      frontImg.src = imagePath;
-      card.classList.add('flipped');
+      cardFront.innerHTML = `<img src="${imagePath}" alt="Character Card">`;
+      setTimeout(() => {
+        card.classList.add('flipped');
+      }, 50);
     }, 300);
   } else {
-    // First flip from static cardback
-    frontImg.src = imagePath;
+    // First draw: load image and flip face-up
+    cardFront.innerHTML = `<img src="${imagePath}" alt="Character Card">`;
     setTimeout(() => {
       card.classList.add('flipped');
-    }, 50);
+    }, 100);
   }
 }
 
@@ -120,5 +122,5 @@ document.getElementById('btn-item').addEventListener('click', () => {
   // Trigger flip animation after insertion
   setTimeout(() => {
     itemCard.classList.add('flipped');
-  }, 50);
+  }, 100);
 });
