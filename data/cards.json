@@ -1,18 +1,19 @@
 {
   "heart": [
-    { "id": "h1", "image": "assets/cards/heart_lorem_01.png" },
-    { "id": "h2", "image": "assets/cards/heart_lorem_02.png" }
+    "heart-angry.png",
+    "heart-charming.png"
   ],
   "kin": [
-    { "id": "k1", "image": "assets/cards/kin_lorem_01.png" },
-    { "id": "k2", "image": "assets/cards/kin_lorem_02.png" }
+    "kin-elf.png",
+    "kin-dwarf.png"
   ],
   "class": [
-    { "id": "c1", "image": "assets/cards/class_lorem_01.png" },
-    { "id": "c2", "image": "assets/cards/class_lorem_02.png" }
+    "class-archer.png",
+    "class-battlechef.png"
   ],
   "item": [
-    { "id": "i1", "image": "assets/cards/item_lorem_01.png" },
-    { "id": "i2", "image": "assets/cards/item_lorem_02.png" }
+    "item-mimicvocalchords.png",
+    "item-beastchains.png",
+    "item-dust-of-the-deft-dodge.png"
   ]
 }
