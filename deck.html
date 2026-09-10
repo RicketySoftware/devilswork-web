@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Devil's Work - Card Deck & Dice</title>
+  <title>Devil's Work - Card Deck & Die</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -10,21 +10,21 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="how-to-play.html">How to Play</a>
-      <a href="deck.html" class="active">Card Deck & Dice</a>
+      <a href="deck.html" class="active">Card Deck & Die</a>
       <a href="shop.html">Shop</a>
     </nav>
   </header>
 
   <main class="container">
     <h1>Interactive Deck & Die</h1>
-    <p class="subtitle">Draw character cards, manage cursed items, and roll your d12 checks.</p>
+    <p class="subtitle">Draw character cards, manage cursed items, and roll your d12 check.</p>
 
-    <div class="controls">
+    <!-- Character Section -->
+    <div class="section-header">
+      <h2>Character (Heart / Kin / Class)</h2>
       <button id="btn-character" class="btn-primary">Create Character (Draw 3)</button>
-      <button id="btn-item" class="btn-secondary">Get Magic Item (Draw 1)</button>
     </div>
-
-    <h2>Character (Heart / Kin / Class)</h2>
+    
     <div class="card-grid">
       <div id="slot-heart">
         <div class="card">
@@ -43,7 +43,12 @@
       </div>
     </div>
 
-    <h2>Inventory & Cursed Items</h2>
+    <!-- Inventory Section -->
+    <div class="section-header">
+      <h2>Inventory & Cursed Items</h2>
+      <button id="btn-item" class="btn-secondary">Get Magic Item (Draw 1)</button>
+    </div>
+
     <div class="card-grid" id="item-container">
       <div id="item-placeholder" class="card placeholder-item" style="display: flex; gap: 16px; align-items: center; width: 100%; max-width: 580px; height: auto; padding: 12px; background-color: var(--bg-card); border: 1px dashed var(--bg-card-border); border-radius: 12px;">
         <div class="card" style="width: 140px; height: 210px; flex-shrink: 0; padding: 0;">
@@ -56,10 +61,10 @@
       </div>
     </div>
 
-    <!-- Dice Roller Container -->
-    <div class="dice-container">
-      <h2>d12 Roller Widget</h2>
-      <div class="dice-result" id="dice-display">--</div>
+    <!-- d12 Die Roller Widget -->
+    <h2>d12 Die Roller</h2>
+    <div class="die-container">
+      <div class="die-result" id="die-display">--</div>
       <button id="btn-roll-d12" class="btn-primary">Roll d12</button>
     </div>
   </main>
