@@ -1,6 +1,5 @@
 let deckData = null;
 
-// Fetch card configuration JSON
 fetch('cards.json')
   .then(response => response.json())
   .then(data => {
@@ -17,13 +16,11 @@ function createCardElement(cardData, showUseButton = false) {
   const cardEl = document.createElement('div');
   cardEl.className = 'card';
 
-  // Render PNG Image Asset
   const img = document.createElement('img');
   img.src = cardData.image;
   img.alt = "LOREM_CARD_IMAGE_ALT";
   cardEl.appendChild(img);
 
-  // Append dismiss button for item cards
   if (showUseButton) {
     const useBtn = document.createElement('button');
     useBtn.className = 'btn-use';
@@ -35,7 +32,6 @@ function createCardElement(cardData, showUseButton = false) {
   return cardEl;
 }
 
-// Action: Create/Redraw Character Cards
 document.getElementById('btn-character').addEventListener('click', () => {
   if (!deckData) return;
 
@@ -52,7 +48,6 @@ document.getElementById('btn-character').addEventListener('click', () => {
   slotClass.appendChild(createCardElement(getRandomCard(deckData.class)));
 });
 
-// Action: Add Magic Item Card
 document.getElementById('btn-item').addEventListener('click', () => {
   if (!deckData) return;
 
